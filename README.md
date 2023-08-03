@@ -1,6 +1,5 @@
 # Zotero File
-
-> 让 ZotFile 在 Zotero 7 继续使用
+> Zotfile's Zotero 7 version
 
 <img src="addon/chrome/content/icons/favicon.png" width="36px" height="36px">
 
