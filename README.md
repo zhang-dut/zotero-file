@@ -12,7 +12,7 @@
 
 ## How to use?
 
-To install `Zotero File` in Zotero 7, download [xpi file](https://github.com/muisedestiny/zotero-file/releases/latest/download/zotero-file.xpi) to your computer. Then, in Zotero, click "Tools → Add-ons" and drag the .xpi onto the Add-ons window.
+To install `Zotero File` in Zotero 7, download [xpi file](https://github.com/muisedestiny/zotero-file/releases/latest/download/zotero-file.xpi) to your computer. Then, in Zotero 7, click "Tools → Add-ons" and drag the .xpi onto the Add-ons window.
 
 ## Note
 
