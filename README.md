@@ -13,8 +13,8 @@
 
 ## How to use?
 
-1. Download the latest released [xpi file](https://github.com/muisedestiny/zotero-file/releases/latest/download/zotero-file.xpi)
-2. In Zotero 7, go to `Tools` -> `Add-ons` -> drag the xpi file to a new open window
+1. Download the latest released [xpi file](https://github.com/muisedestiny/zotero-file/releases/latest/download/zotero-file.xpi).
+2. In Zotero 7, go to `Tools` -> `Add-ons` -> drag the xpi file to a new open window.
 
 ## Note
 
