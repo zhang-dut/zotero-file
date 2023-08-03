@@ -10,35 +10,39 @@
 [![License](http://img.shields.io/github/license/MuiseDestiny/zotero-file)](https://github.com/MuiseDestiny/zotero-file/blob/master/LICENSE)
 ![Downloads latest release](http://img.shields.io/github/downloads/MuiseDestiny/zotero-file/latest/total?color=yellow)
 
-**最新版本状态：🟢稳定使用**
 
-## 说明
+## How to use?
 
-本插件是在 [@jlegewie](https://github.com/jlegewie) 的 [ZotFile插件](https://github.com/jlegewie/zotfile) 的基础上编写的。这是因为 [作者明确表示](https://github.com/jlegewie/zotfile/issues/655#issuecomment-1595364307) 不会适配 Zotero 7，且官方实现 ZotFile 的功能仍需要一定时间。
+1. Download the latest released [xpi file](https://github.com/muisedestiny/zotero-file/releases/latest/download/zotero-file.xpi)
+2. In Zotero 7, go to `Tools` -> `Add-ons` -> drag the xpi file to a new open window
 
-在此向 @jlegewie 作者表示感谢，感谢编写了如此好用的插件。这些代码的光芒不应该因为 Zotero 的升级而暗淡。本插件将使得 ZotFile 继续发光发热。
+## Note
 
-在此向 [@windingwind](https://github.com/windingwind) 表示感谢，在 @windingwind 的 [插件模板](https://github.com/windingwind/zotero-plugin-template) 的基础上，让本插件的实现变得简单且高效。
+This plugin based on [@jlegewie](https://github.com/jlegewie) 的 [ZotFile](https://github.com/jlegewie/zotfile) . Because [author stated](https://github.com/jlegewie/zotfile/issues/655#issuecomment-1595364307) that zotero 7 will not be adapted.
 
-本插件将逐步迁移 ZotFile 的核心功能 （不包含平板同步功能），如果喜欢本项目，欢迎 ⭐Star。
+A big thank you to the author @jlegewie for writing such a great plugin. The light of this code should not dim with the Zotero upgrade. This plugin will allow ZotFile to continue to shine.
 
-## 注意
+A big thank you to [@windingwind](https://github.com/windingwind) for making the implementation of this plugin simple and efficient based on @windingwind's [plugin template](https://github.com/windingwind/zotero-plugin-template). It makes the implementation of this plugin simple and efficient.
 
-如果你是`Zotero 6 + ZotFile`用户，升级 `Zotero 7` 后安装本插件，你不需要重新设置。因为`Zotero File`会读取你在`Zotero 6 + ZotFile`里对`ZotFile`的所有配置。
+This plugin will gradually migrate the core functionality of ZotFile (tablet sync not included), if you like this project, welcome ⭐Star.
 
-你可以在 Zotero 6 和 7 之间无缝切换。
+## Attention
 
-## 目标
+If you are a `Zotero 6 + ZotFile` user and install this plugin after upgrading `Zotero 7`, you don't need to reset it. This is because `Zotero File` reads all your `Zotero 6 + ZotFile` configuration of `ZotFile`.
 
-让 ZotFile 核心功能可以在 Zotero 7 运行，让 ZotFile 继续发挥它的光芒！
+You can switch between Zotero 6 and 7 seamlessly.
 
-## 已实现
+## TODO
 
-- [x] 自动重命名
-- [x] 自动移动附件
-- [x] 设置界面
+Let ZotFile continue to shine by making the core ZotFile functionality work in Zotero 7!
 
-## 预览
+## Done
+
+- [x] Automatic renaming
+- [x] Automatically move attachments
+- [x] Setup screen
+
+## Preview
 
 ![image](https://github.com/MuiseDestiny/zotero-file/assets/51939531/85988b3a-e626-4418-8d61-1a7d37431ae7)
 
@@ -48,13 +52,18 @@
 
 ![image](https://github.com/MuiseDestiny/zotero-file/assets/51939531/9c7a3be2-6776-448d-94f8-adf28559e3a3)
 
-## 捐赠
+## Donate
 
 <img src="http://user-images.githubusercontent.com/51939531/227145474-ca165a93-fcf2-4b47-baf4-ea6b29f43d99.png" width="50%" height="50%">
 
 感谢[@leichaoL](https://github.com/leichaoL)、[@JOJOdioJosita](https://github.com/JOJOdioJosita)、@小陈、[@YangChunyu1999](https://github.com/YangChunyu1999)、[@遍一认着倒要少至你赌我](https://b23.tv/JjHR5ON)、[@Eunsolfs](https://github.com/Eunsolfs)以及一些匿名赞助的朋友们，也感谢很治愈的留言
 
+---
+
+**Here is the original ZotFile reame**
+
 # ZotFile: Advanced PDF management for Zotero
+
 
 ### Joscha Legewie
 
