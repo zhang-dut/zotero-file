@@ -18,7 +18,7 @@
 
 ## Note
 
-This plugin based on [@jlegewie](https://github.com/jlegewie) 的 [ZotFile](https://github.com/jlegewie/zotfile) . Because [author stated](https://github.com/jlegewie/zotfile/issues/655#issuecomment-1595364307) that zotero 7 will not be adapted.
+This plugin is based on [@jlegewie](https://github.com/jlegewie) 的 [ZotFile](https://github.com/jlegewie/zotfile) . Because [author stated](https://github.com/jlegewie/zotfile/issues/655#issuecomment-1595364307) that zotero 7 will not be adapted.
 
 A big thank you to the author @jlegewie for writing such a great plugin. The light of this code should not dim with the Zotero upgrade. This plugin will allow ZotFile to continue to shine.
 
