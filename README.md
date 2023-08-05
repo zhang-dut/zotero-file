@@ -38,7 +38,6 @@ Let ZotFile continue to shine by making the core ZotFile functionality work in Z
 
 - [x] Automatic renaming
 - [x] Automatically move attachments
-- [x] Setup screen
 
 ## Preview
 
