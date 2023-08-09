@@ -1,4 +1,5 @@
 # Zotero File
+
 > [ZotFile](https://github.com/jlegewie/zotfile)'s Zotero 7 version
 
 <img src="addon/chrome/content/icons/favicon.png" width="36px" height="36px">
@@ -8,7 +9,6 @@
 ![Release Date](http://img.shields.io/github/release-date/MuiseDestiny/zotero-file?color=9cf)
 [![License](http://img.shields.io/github/license/MuiseDestiny/zotero-file)](https://github.com/MuiseDestiny/zotero-file/blob/master/LICENSE)
 ![Downloads latest release](http://img.shields.io/github/downloads/MuiseDestiny/zotero-file/latest/total?color=yellow)
-
 
 ## How to use?
 
