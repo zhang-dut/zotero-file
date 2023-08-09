@@ -1,4 +1,4 @@
-# Zotero File
+# ZotFile
 
 > [ZotFile](https://github.com/jlegewie/zotfile)'s Zotero 7 version
 
