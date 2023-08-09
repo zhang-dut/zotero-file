@@ -1,9 +1,9 @@
 {
-  "name": "zotero-file",
+  "name": "zotfile",
   "version": "0.1.0",
   "description": "Zotero 7 Meet ZotFile",
   "config": {
-    "addonName": "Zotero File",
+    "addonName": "ZotFile",
     "addonID": "zoterofile@polygon.org",
     "addonRef": "zoterofile",
     "addonInstance": "ZoteroFile",
