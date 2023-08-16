@@ -1,6 +1,6 @@
 import { config } from "../../package.json";
 export default class Views {
-  constructor() { }
+  constructor() {}
 
   public async init() {
     await this.registerItemMenu();
@@ -39,7 +39,11 @@ export default class Views {
   private async registerPreferencePane() {
     const prefOptions = {
       pluginID: config.addonID,
-      src: rootURI + `chrome/content/preferences${Zotero.locale == "zh-CN" ? "_zh-CN" : ""}.xhtml`,
+      src:
+        rootURI +
+        `chrome/content/preferences${
+          Zotero.locale == "zh-CN" ? "_zh-CN" : ""
+        }.xhtml`,
       label: "ZotFile",
       image: `chrome://${config.addonRef}/content/icons/favicon.png`,
       defaultXUL: true,
