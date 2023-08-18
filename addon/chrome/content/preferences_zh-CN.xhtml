@@ -119,11 +119,7 @@
           preference="extensions.zotfile.replace_blanks"
         />
       </hbox>
-      <checkbox
-        native="true"
-        label="在.或:或?之后截断标题"
-        preference="extensions.zotfile.truncate_title"
-      />
+      <checkbox native="true" label="在 . 或 : 或 ? 之后截断标题" preference="extensions.zotfile.truncate_title" />
       <hbox style="margin: 0">
         <checkbox
           native="true"
@@ -194,17 +190,9 @@
         preference="extensions.zotfile.confirmation"
       />
       <hbox style="margin: 0" align="center">
-        <checkbox
-          native="true"
-          label="（批量）重命名或移动时询问用户"
-          preference="extensions.zotfile.confirmation_batch_ask"
-        />
-        <html:input
-          type="text"
-          preference="extensions.zotfile.confirmation_batch"
-          style="width: 40px"
-        />
-        <label style="line-height: 2em">或更多类型</label>
+        <checkbox native="true" label="（批量）重命名或移动大于此数目的附件时询问用户" preference="extensions.zotfile.confirmation_batch_ask" />
+        <html:input type="text" preference="extensions.zotfile.confirmation_batch" style="width: 40px" />
+        <label style="line-height: 2em"></label>
       </hbox>
       <checkbox
         native="true"
@@ -212,17 +200,9 @@
         preference="extensions.zotfile.removeDiacritics"
       />
       <hbox style="margin: 0" align="center">
-        <checkbox
-          native="true"
-          label="仅对下列文件类型生效"
-          preference="extensions.zotfile.useFileTypes"
-        />
-        <html:input
-          type="text"
-          preference="extensions.zotfile.filetypes"
-          style="-moz-box-flex: 1"
-        />
-        <label style="line-height: 2em">或更多类型</label>
+        <checkbox native="true" label="仅对下列文件类型生效：" preference="extensions.zotfile.useFileTypes" />
+        <html:input type="text" preference="extensions.zotfile.filetypes" style="-moz-box-flex: 1" />
+        <label style="line-height: 2em"></label>
       </hbox>
     </vbox>
   </groupbox>
