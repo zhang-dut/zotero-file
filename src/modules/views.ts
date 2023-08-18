@@ -15,7 +15,7 @@ export default class Views {
     ztoolkit.Menu.register("item", {
       tag: "menuitem",
       id: "id-zotfile-attach-file",
-      label: "Attach New File",
+      label: Zotero.locale == "zh-CN" ? "附加新文件" : "Attach New File",
       getVisibility: () =>
         ZoteroPane.getSelectedItems().some(
           (item) => item.isAttachment() || item.isRegularItem(),
@@ -26,7 +26,7 @@ export default class Views {
     // renameAndMove.png
     ztoolkit.Menu.register("item", {
       tag: "menuitem",
-      label: "Rename and Move",
+      label: Zotero.locale == "zh-CN" ? "重命名附件并移动" : "Rename and Move",
       getVisibility: () =>
         ZoteroPane.getSelectedItems().some(
           (item) => item.isAttachment() || item.isRegularItem(),
@@ -39,7 +39,11 @@ export default class Views {
   private async registerPreferencePane() {
     const prefOptions = {
       pluginID: config.addonID,
-      src: rootURI + "chrome/content/preferences.xhtml",
+      src:
+        rootURI +
+        `chrome/content/preferences${
+          Zotero.locale == "zh-CN" ? "_zh-CN" : ""
+        }.xhtml`,
       label: "ZotFile",
       image: `chrome://${config.addonRef}/content/icons/favicon.png`,
       defaultXUL: true,

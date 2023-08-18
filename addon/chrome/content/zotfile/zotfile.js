@@ -423,8 +423,11 @@ Zotero.ZotFile = new (function () {
     var l10n = "";
     this.stringsBundle = Components.classes["@mozilla.org/intl/stringbundle;1"]
       .getService(Components.interfaces.nsIStringBundleService)
-      // .createBundle("chrome://zoterofile/locale/zotfile.properties");
-      .createBundle("chrome://zoterofile/content/zotfile/zotfile.properties");
+      .createBundle(
+        `chrome://zoterofile/content/zotfile/zotfile${
+          Zotero.locale == "zh-CN" ? "_zh-CN" : ""
+        }.properties`,
+      );
 
     try {
       if (params !== undefined) {
