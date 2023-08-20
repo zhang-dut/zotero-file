@@ -17,10 +17,6 @@ export async function registerPrefsScripts(_window: Window) {
 }
 
 async function update() {
-  // You can initialize some UI elements on prefs window
-  // with addon.data.prefs.window.document
-  // Or bind some events to the elements
-  const renderLock = ztoolkit.getGlobal("Zotero").Promise.defer();
   if (addon.data.prefs?.window == undefined) return;
   const doc = addon.data.prefs?.window.document;
   doc

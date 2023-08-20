@@ -3,7 +3,7 @@
   "version": "0.2.2",
   "description": "Zotero 7 Meet ZotFile",
   "config": {
-    "addonName": "ZotFile",
+    "addonName": "Wandering File",
     "addonID": "zoterofile@polygon.org",
     "addonRef": "zoterofile",
     "addonInstance": "ZoteroFile",
