@@ -1,6 +1,6 @@
 import { config } from "../../package.json";
 export default class Views {
-  constructor() { }
+  constructor() {}
 
   public async init() {
     await this.registerItemMenu();
@@ -41,7 +41,8 @@ export default class Views {
       pluginID: config.addonID,
       src:
         rootURI +
-        `chrome/content/preferences${Zotero.locale == "zh-CN" ? "_zh-CN" : ""
+        `chrome/content/preferences${
+          Zotero.locale == "zh-CN" ? "_zh-CN" : ""
         }.xhtml`,
       label: "File",
       image: `chrome://${config.addonRef}/content/icons/favicon.png`,

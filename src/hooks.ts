@@ -105,5 +105,5 @@ export default {
   onMainWindowLoad,
   onMainWindowUnload,
   onNotify,
-  onPrefsEvent
+  onPrefsEvent,
 };
