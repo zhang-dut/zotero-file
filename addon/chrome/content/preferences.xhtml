@@ -205,6 +205,13 @@
           </menupopup>
         </menulist>
       </hbox>
+      <hbox>
+        <label style="line-height: 2em; font-size: x-small; font-style: italic">
+          ⊙ If choose "Only move not rename if item has other atts", it is
+          recommended to set the "Location of Files" => "Use subfolder defined
+          by" option to "%c/%t" and check it to avoid attachment conflicts.
+        </label>
+      </hbox>
       <checkbox
         native="true"
         label="Ask user when attaching new files"
@@ -241,6 +248,14 @@
         />
         <label style="line-height: 2em">or more attachments.</label>
       </hbox>
+    </vbox>
+    <vbox>
+      <html:h3>Menu Show</html:h3>
+      <checkbox
+        native="false"
+        label="Move Attachment"
+        preference="extensions.zotfile.show_onlymove_menu"
+      />
     </vbox>
   </groupbox>
 </vbox>

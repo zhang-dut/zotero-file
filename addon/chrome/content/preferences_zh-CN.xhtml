@@ -189,6 +189,13 @@
           </menupopup>
         </menulist>
       </hbox>
+      <hbox>
+        <label style="line-height: 2em; font-size: x-small; font-style: italic">
+          ⊙
+          如果选择『在条目有其他附件时只移动不重命名』，推荐将『文件位置』=>『使用子文件夹，其定义为』选项设定为
+          『 /%c/%t 』 并勾选，以避免附件冲突。
+        </label>
+      </hbox>
       <checkbox
         native="true"
         label="在附加新文件时询问用户"
@@ -225,6 +232,14 @@
         />
         <label style="line-height: 2em"></label>
       </hbox>
+    </vbox>
+    <vbox>
+      <html:h3>菜单显示项</html:h3>
+      <checkbox
+        native="false"
+        label="移动附件"
+        preference="extensions.zotfile.show_onlymove_menu"
+      />
     </vbox>
   </groupbox>
 </vbox>

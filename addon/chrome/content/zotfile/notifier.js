@@ -127,7 +127,7 @@ Zotero.ZotFile.notifierCallback = new (function () {
         if (auto_rename == 4) on_confirm(att);
         // Only move not rename
         if (auto_rename == 5) {
-          console.log("auto_rename", 5);
+          console.log("only move not rename", 5);
           var item_atts = Zotero.Items.get(item.getAttachments())
             .filter(this.checkFileType)
             .filter(
