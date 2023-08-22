@@ -65,7 +65,9 @@ async function onNotify(
     event == "select" &&
     type == "tab" &&
     extraData[ids[0]].type == "reader"
-  ) { /* empty */ } else {
+  ) {
+    /* empty */
+  } else {
     return;
   }
 }
