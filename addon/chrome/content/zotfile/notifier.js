@@ -89,6 +89,11 @@ Zotero.ZotFile.notifierCallback = new (function () {
           txt: this.ZFgetString("renaming.clickMoveRename"),
           icons: [att.getImageSrc()],
         };
+        var move_message = {
+          lines: [att.attachmentFilename],
+          txt: this.ZFgetString("renaming.clickMove"),
+          icons: [att.getImageSrc()],
+        };
         // always ask user
         if (auto_rename == 2)
           this.infoWindow(
@@ -120,14 +125,35 @@ Zotero.ZotFile.notifierCallback = new (function () {
         }
         // always rename
         if (auto_rename == 4) on_confirm(att);
+        // Only move not rename
+        if (auto_rename == 5) {
+          console.log("auto_rename", 5);
+          var item_atts = Zotero.Items.get(item.getAttachments())
+            .filter(this.checkFileType)
+            .filter(
+              (att) =>
+                att.isImportedAttachment() ||
+                att.attachmentLinkMode ==
+                  Zotero.Attachments.LINK_MODE_LINKED_FILE,
+            );
+          console.log("item_atts", item_atts);
+          if (item_atts.length == 1) on_confirm(att);
+          if (item_atts.length > 1)
+            this.infoWindow(
+              this.ZFgetString("general.newAttachment"),
+              move_message,
+              duration,
+              () => on_confirm(att, false),
+            );
+        }
       }
     }.bind(Zotero.ZotFile),
   );
 
   var on_confirm = Zotero.Promise.coroutine(
-    function* (att) {
+    function* (att, rename = true) {
       // rename attachment
-      att = yield this.renameAttachment(att);
+      att = yield this.renameAttachment(att, undefined, rename);
       // user notification
       var progress_win = this.progressWindow(
         this.ZFgetString("general.newAttachmentRenamed"),
