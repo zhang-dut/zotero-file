@@ -31,6 +31,7 @@ pref("extensions.zotfile.watch_folder", true);
 //pref("extensions.zotfile.watch_folder_list", '["source_dir"]');
 pref("extensions.zotfile.automatic_renaming", 3);
 pref("extensions.zotfile.disable_renaming", false);
+pref("extensions.zotfile.show_onlymove_menu", true);
 pref("extensions.zotfile.replace_blanks", false);
 pref("extensions.zotfile.lower_case", false);
 pref("extensions.zotfile.subfolder", false);

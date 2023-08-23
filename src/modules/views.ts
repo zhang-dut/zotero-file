@@ -34,6 +34,19 @@ export default class Views {
       commandListener: (ev) => Zotero.ZotFile.renameSelectedAttachments(),
       icon: `chrome://${config.addonRef}/content/icons/renameAndMove.png`,
     });
+    // move
+    ztoolkit.Menu.register("item", {
+      tag: "menuitem",
+      label: Zotero.locale == "zh-CN" ? "移动附件" : "Move Attachment",
+      getVisibility: () =>
+        ZoteroPane.getSelectedItems().some(
+          (item) =>
+            (item.isAttachment() || item.isRegularItem()) &&
+            Zotero.Prefs.get("extensions.zotfile.show_onlymove_menu", true),
+        ),
+      commandListener: (ev) => Zotero.ZotFile.moveSelectedAttachments(),
+      icon: `chrome://${config.addonRef}/content/icons/renameAndMove.png`,
+    });
   }
 
   private async registerPreferencePane() {
