@@ -1,6 +1,6 @@
 import { config } from "../../package.json";
 export default class Views {
-  constructor() { }
+  constructor() {}
 
   public async init() {
     await this.registerItemMenu();
@@ -47,7 +47,7 @@ export default class Views {
       commandListener: (ev) => Zotero.ZotFile.renameSelectedAttachments(),
       icon: `chrome://${config.addonRef}/content/icons/renameAndMove.png`,
     });
-    this.registerOpenUsing()
+    this.registerOpenUsing();
   }
 
   private async registerPreferencePane() {
@@ -55,7 +55,8 @@ export default class Views {
       pluginID: config.addonID,
       src:
         rootURI +
-        `chrome/content/preferences${Zotero.locale == "zh-CN" ? "_zh-CN" : ""
+        `chrome/content/preferences${
+          Zotero.locale == "zh-CN" ? "_zh-CN" : ""
         }.xhtml`,
       label: "File",
       image: `chrome://${config.addonRef}/content/icons/favicon.png`,
@@ -65,20 +66,28 @@ export default class Views {
   }
 
   private async registerOpenUsing() {
-    const fileHandlerArr = JSON.parse(Zotero.Prefs.get(`${config.addonRef}.openUsing`) as string || "[]")
+    const fileHandlerArr = JSON.parse(
+      (Zotero.Prefs.get(`${config.addonRef}.openUsing`) as string) || "[]",
+    );
     const setPref = (fileHandlerArr: string[]) => {
       window.setTimeout(async () => {
-        Zotero.Prefs.set(`${config.addonRef}.openUsing`, JSON.stringify(fileHandlerArr));
+        Zotero.Prefs.set(
+          `${config.addonRef}.openUsing`,
+          JSON.stringify(fileHandlerArr),
+        );
         await ztoolkit.Menu.unregisterAll();
-        await this.registerItemMenu()
-      })
-    }
+        await this.registerItemMenu();
+      });
+    };
     ztoolkit.Menu.register("item", {
       tag: "menu",
       label: Zotero.locale == "zh-CN" ? "打开方式" : "Open Using",
       getVisibility: () =>
         ZoteroPane.getSelectedItems().some(
-          (item) => item.isAttachment() || (item.isRegularItem() && item.getBestAttachmentStateCached().exists),
+          (item) =>
+            item.isAttachment() ||
+            (item.isRegularItem() &&
+              item.getBestAttachmentStateCached().exists),
         ),
       icon: `chrome://${config.addonRef}/content/icons/openUsing.png`,
       children: [
@@ -87,18 +96,18 @@ export default class Views {
           label: "Zotero",
           commandListener: async (ev) => {
             // 第二个参数应该从文件分析得出，默认pdf
-            this.openSelectedItemsUsing("", "pdf")
-          }
+            this.openSelectedItemsUsing("", "pdf");
+          },
         },
         {
           tag: "menuitem",
           label: Zotero.locale == "zh-CN" ? "系统" : "System",
           commandListener: async (ev) => {
-            this.openSelectedItemsUsing("system", "pdf")
-          }
+            this.openSelectedItemsUsing("system", "pdf");
+          },
         },
         ...((() => {
-          const children = []
+          const children = [];
           for (const fileHandler of fileHandlerArr) {
             children.push({
               tag: "menuitem",
@@ -106,16 +115,18 @@ export default class Views {
               commandListener: async (ev: MouseEvent) => {
                 if (ev.button == 2) {
                   if (window.confirm("Delete?")) {
-                    const _fileHandlerArr = fileHandlerArr.filter((i: string) => i != fileHandler) as string[]
-                    setPref(_fileHandlerArr)
+                    const _fileHandlerArr = fileHandlerArr.filter(
+                      (i: string) => i != fileHandler,
+                    ) as string[];
+                    setPref(_fileHandlerArr);
                   }
                 } else {
-                  this.openSelectedItemsUsing(fileHandler, "pdf")
+                  this.openSelectedItemsUsing(fileHandler, "pdf");
                 }
-              }
-            })
+              },
+            });
           }
-          return children
+          return children;
         })() as any),
         {
           tag: "menuitem",
@@ -124,34 +135,34 @@ export default class Views {
             const filename = await new ztoolkit.FilePicker(
               "Select Application",
               "open",
-              [
-                ["Any", "*.*"],
-              ],
+              [["Any", "*.*"]],
             ).open();
             if (filename && fileHandlerArr.indexOf(filename) == -1) {
-              fileHandlerArr.push(filename)
-              setPref(fileHandlerArr)
-              this.openSelectedItemsUsing(filename, "pdf")
+              fileHandlerArr.push(filename);
+              setPref(fileHandlerArr);
+              this.openSelectedItemsUsing(filename, "pdf");
             }
-          }
-        }
-      ]
-    })
+          },
+        },
+      ],
+    });
   }
 
   private async openSelectedItemsUsing(fileHandler: string, fileType = "pdf") {
-    const _fileHandler = Zotero.Prefs.get(`fileHandler.${fileType}`) as string
-    Zotero.Prefs.set(`fileHandler.${fileType}`, fileHandler)
-    const selectedItems = ZoteroPane.getSelectedItems()
-    const ids: number[] = []
-    await Promise.all(selectedItems.map(async (item: Zotero.Item) => {
-      if (item.isAttachment()) {
-        ids.push(item.id)
-      } else {
-        ids.push((await item.getBestAttachments())[0].id)
-      }
-    }))
-    await ZoteroPane.viewAttachment(ids)
-    Zotero.Prefs.set(`fileHandler.${fileType}`, _fileHandler)
+    const _fileHandler = Zotero.Prefs.get(`fileHandler.${fileType}`) as string;
+    Zotero.Prefs.set(`fileHandler.${fileType}`, fileHandler);
+    const selectedItems = ZoteroPane.getSelectedItems();
+    const ids: number[] = [];
+    await Promise.all(
+      selectedItems.map(async (item: Zotero.Item) => {
+        if (item.isAttachment()) {
+          ids.push(item.id);
+        } else {
+          ids.push((await item.getBestAttachments())[0].id);
+        }
+      }),
+    );
+    await ZoteroPane.viewAttachment(ids);
+    Zotero.Prefs.set(`fileHandler.${fileType}`, _fileHandler);
   }
 }
