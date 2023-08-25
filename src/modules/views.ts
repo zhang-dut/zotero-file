@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { config } from "../../package.json";
 export default class Views {
   constructor() {}
@@ -87,7 +88,7 @@ export default class Views {
           (item) =>
             item.isAttachment() ||
             (item.isRegularItem() &&
-              item.getBestAttachmentStateCached().exists),
+              (item.getBestAttachmentStateCached() as any).exists),
         ),
       icon: `chrome://${config.addonRef}/content/icons/openUsing.png`,
       children: [
@@ -111,6 +112,7 @@ export default class Views {
           for (const fileHandler of fileHandlerArr) {
             children.push({
               tag: "menuitem",
+              // @ts-ignore
               label: window.OS.Path.basename(fileHandler),
               commandListener: async (ev: MouseEvent) => {
                 if (ev.button == 2) {
