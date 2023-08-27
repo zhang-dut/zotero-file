@@ -134,10 +134,11 @@ export default class Views {
           tag: "menuitem",
           label: Zotero.locale == "zh-CN" ? "选择其它应用" : "Choose Other App",
           commandListener: async (ev) => {
+            // #42 Multiple extensions may be included, separated by a semicolon and a space.
             const filename = await new ztoolkit.FilePicker(
               "Select Application",
               "open",
-              [["Any", "*.*"]],
+              [["Application", "*.exe; *.app"]], // support windows .exe and macOS .app both.
             ).open();
             if (filename && fileHandlerArr.indexOf(filename) == -1) {
               fileHandlerArr.push(filename);
