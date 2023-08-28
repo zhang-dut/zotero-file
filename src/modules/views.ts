@@ -9,6 +9,17 @@ export default class Views {
   }
 
   private async registerItemMenu() {
+    // Attach New Collection Item from File
+    ztoolkit.Menu.register("collection", {
+      tag: "menuitem",
+      id: "id-zotfile-attach-file",
+      label:
+        Zotero.locale == "zh-CN"
+          ? "添加新文件到当前分类"
+          : "Attach New Collection Item",
+      commandListener: (ev) => Zotero.ZotFile.attachFileToCollection(),
+      icon: `chrome://${config.addonRef}/content/icons/attachNewFile.png`,
+    });
     ztoolkit.Menu.register("item", {
       tag: "menuseparator",
     });
