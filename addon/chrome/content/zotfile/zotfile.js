@@ -1268,6 +1268,83 @@ Zotero.ZotFile = new (function () {
   });
 
   /**
+   * Attach file to zotero items
+   * @param  {Zotero.collection} item  zotero collection.
+   * @param  {string}      path  Filepath.
+   * @return {int}               Zotero attachment id
+   */
+  this.attachCollectionFile = Zotero.Promise.coroutine(function* (item, path) {
+    let options = {
+      file: path,
+      libraryID: item.libraryID,
+      collections: [item.id],
+    };
+    // adding to colletion always create imported attachment
+    // this.excludeAutorenameKeys.push(item.key);
+    var att = yield Zotero.Attachments.importFromFile(options);
+    // Automatically retrieve metadata for PDFs and ebooks
+    if (!att.parentItemID) {
+      yield Zotero.RecognizeDocument.autoRecognizeItems([att]);
+    }
+    // rename attachment
+    att = yield this.renameAttachment(att);
+    // remove file from source folder
+    if (path != att.getFilePath()) OS.File.remove(path);
+    // return attachment item
+    return att;
+  });
+
+  this.attachFileToCollection = Zotero.Promise.coroutine(function* () {
+    // get selected collection
+    let win = Services.wm.getMostRecentWindow("navigator:browser");
+    let collection = win.ZoteroPane.getSelectedCollection();
+
+    // get source dir
+    var source_dir = yield this.getSourceDir(false);
+    // invalid source folder
+    if (this.getPref("source_dir_ff") && !source_dir) {
+      this.setPref("source_dir_ff", false);
+      this.setPref(
+        "source_dir",
+        prompt(this.ZFgetString("general.downloadFolder.prompt")),
+      );
+      return;
+    }
+    if (!source_dir) return;
+    // get files from source directory
+    var paths = !this.getPref("allFiles")
+      ? [this.getLastFileInFolder(source_dir)]
+      : this.getFilesInFolder(source_dir);
+    if (!paths[0]) {
+      this.handleErrors(this.ZFgetString("renaming.renameAttach.noFileFound"));
+      return;
+    }
+    // confirmation
+    if (this.getPref("confirmation"))
+      if (
+        !confirm(
+          this.ZFgetString("renaming.renameAttach.confirm", [
+            OS.Path.basename(paths[0]),
+          ]),
+        )
+      )
+        return;
+    // attach files
+    var progress_win = this.progressWindow(
+      this.ZFgetString("general.newAttachmentsAdded"),
+    );
+    for (var i = 0; i < paths.length; i++) {
+      let att = yield this.attachCollectionFile(collection, paths[i]);
+      progress = new progress_win.ItemProgress(
+        att.getImageSrc(),
+        att.getField("title"),
+      );
+      progress.setProgress(100);
+    }
+    progress_win.startCloseTimer(this.getPref("info_window_duration"));
+  });
+
+  /**
    * Attach last file (or all files) from source directory
    * @return {void}
    */
