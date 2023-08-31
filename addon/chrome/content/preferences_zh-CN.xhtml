@@ -28,7 +28,7 @@
       <html:h3>文件位置</html:h3>
       <vbox>
         <label style="line-height: 2em"
-          >ZotFile可以移动新的和已有的附件到另一位置。您可以在Zotero中存储您的附件的一份拷贝以便与Zotero服务器同步文件，或者移动文件到一个自定义文件夹并从Zotero链接到此处。</label
+          >ZotFile可以移动新的和已有的附件到另一位置。您可以在Zotero中存储您的附件的一份拷贝以便与Zotero<br></br>服务器同步文件，或者移动文件到一个自定义文件夹并从Zotero链接到此处。</label
         >
         <separator />
         <radiogroup id="zotfile-import">
@@ -55,6 +55,12 @@
             preference="extensions.zotfile.subfolderFormat"
             style="width: 100px"
           />
+      <hbox>
+        <label style="line-height: 2em; font-size: x-small; font-style: italic">
+          ⊙
+          Windows下此处的“/”均应替换为“\”。
+        </label>
+      </hbox>
         </hbox>
       </vbox>
     </vbox>
@@ -192,7 +198,7 @@
       <hbox>
         <label style="line-height: 2em; font-size: x-small; font-style: italic">
           ⊙
-          如果选择『在条目有其他附件时只移动不重命名』，推荐将『文件位置』=>『使用子文件夹，其定义为』选项设定为
+          如果选择『在条目有其他附件时只移动不重命名』，推荐将『文件位置』=>『使用子文件夹，其定义为』选项设定为<br></br>
           『 /%c/%t 』 并勾选，以避免附件冲突。
         </label>
       </hbox>
