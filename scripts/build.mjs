@@ -242,7 +242,7 @@ async function main() {
   console.log("[Build] Replace OK");
 
   // Walk the builds/addon/locale folder's sub folders and rename *.ftl to addonRef-*.ftl
-  renameLocaleFiles();
+  // renameLocaleFiles();
 
   console.log("[Build] Addon prepare OK");
 
