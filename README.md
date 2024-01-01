@@ -12,7 +12,7 @@
 
 ## How to use?
 
-To install `Zotero File` in Zotero 7, download [xpi file](https://github.com/muisedestiny/zotero-file/releases/latest/download/zotero-file.xpi) to your computer. Then, in Zotero 7, click "Tools → Add-ons" and drag the xpi file onto the Add-ons window.
+To install `Zotero File` in Zotero 7, download [xpi file](https://github.com/lychichem/zotero-file/releases/latest/download/zotero-file.xpi) to your computer. Then, in Zotero 7, click "Tools → Add-ons" and drag the xpi file onto the Add-ons window.
 
 ## Note
 
@@ -38,16 +38,6 @@ Let ZotFile continue to shine by making the core ZotFile functionality work in Z
 
 - [x] Automatic renaming
 - [x] Automatically move attachments
-
-## Preview
-
-![image](https://github.com/MuiseDestiny/zotero-file/assets/51939531/85988b3a-e626-4418-8d61-1a7d37431ae7)
-
-![image](https://github.com/MuiseDestiny/zotero-file/assets/51939531/03018858-5f38-44ca-b5dc-0024d6d96143)
-
-![image](https://github.com/MuiseDestiny/zotero-file/assets/51939531/cf078acb-6f5b-4fc1-b1ab-5677a9c75257)
-
-![image](https://github.com/MuiseDestiny/zotero-file/assets/51939531/9c7a3be2-6776-448d-94f8-adf28559e3a3)
 
 ## Donate
 
