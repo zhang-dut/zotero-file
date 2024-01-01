@@ -88,30 +88,30 @@ function dateFormat(fmt, date) {
   return fmt;
 }
 
-function renameLocaleFiles() {
-  const localeDir = path.join(buildDir, "addon/locale");
-  const localeFolders = readdirSync(localeDir, { withFileTypes: true })
-    .filter((dirent) => dirent.isDirectory())
-    .map((dirent) => dirent.name);
+// function renameLocaleFiles() {
+//   const localeDir = path.join(buildDir, "addon/locale");
+//   const localeFolders = readdirSync(localeDir, { withFileTypes: true })
+//     .filter((dirent) => dirent.isDirectory())
+//     .map((dirent) => dirent.name);
 
-  for (const localeSubFolder of localeFolders) {
-    const localeSubDir = path.join(localeDir, localeSubFolder);
-    const localeSubFiles = readdirSync(localeSubDir, {
-      withFileTypes: true,
-    })
-      .filter((dirent) => dirent.isFile())
-      .map((dirent) => dirent.name);
+//   for (const localeSubFolder of localeFolders) {
+//     const localeSubDir = path.join(localeDir, localeSubFolder);
+//     const localeSubFiles = readdirSync(localeSubDir, {
+//       withFileTypes: true,
+//     })
+//       .filter((dirent) => dirent.isFile())
+//       .map((dirent) => dirent.name);
 
-    for (const localeSubFile of localeSubFiles) {
-      if (localeSubFile.endsWith(".ftl")) {
-        renameSync(
-          path.join(localeSubDir, localeSubFile),
-          path.join(localeSubDir, `${config.addonRef}-${localeSubFile}`),
-        );
-      }
-    }
-  }
-}
+//     for (const localeSubFile of localeSubFiles) {
+//       if (localeSubFile.endsWith(".ftl")) {
+//         renameSync(
+//           path.join(localeSubDir, localeSubFile),
+//           path.join(localeSubDir, `${config.addonRef}-${localeSubFile}`),
+//         );
+//       }
+//     }
+//   }
+// }
 
 function replaceString() {
   const replaceFrom = [
