@@ -5,10 +5,10 @@
 <img src="addon/chrome/content/icons/favicon.png" width="36px" height="36px">
 
 [![Using Zotero Plugin Template](http://img.shields.io/badge/Using-Zotero%20Plugin%20Template-blue?style=flat-round&logo=github)](https://github.com/windingwind/zotero-plugin-template)
-[![Latest release](http://img.shields.io/github/v/release/MuiseDestiny/zotero-file)](https://github.com/MuiseDestiny/zotero-file/releases)
-![Release Date](http://img.shields.io/github/release-date/MuiseDestiny/zotero-file?color=9cf)
-[![License](http://img.shields.io/github/license/MuiseDestiny/zotero-file)](https://github.com/MuiseDestiny/zotero-file/blob/master/LICENSE)
-![Downloads latest release](http://img.shields.io/github/downloads/MuiseDestiny/zotero-file/latest/total?color=yellow)
+[![Latest release](http://img.shields.io/github/v/release/lychichem/zotero-file)](https://github.com/lychichem/zotero-file/releases)
+![Release Date](http://img.shields.io/github/release-date/lychichem/zotero-file?color=9cf)
+[![License](http://img.shields.io/github/license/lychichem/zotero-file)](https://github.com/lychichem/zotero-file/blob/master/LICENSE)
+![Downloads latest release](http://img.shields.io/github/downloads/lychichem/zotero-file/latest/total?color=yellow)
 
 ## How to use?
 
